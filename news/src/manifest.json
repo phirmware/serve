@@ -11,6 +11,9 @@
     "icons": [
         {
             "src": "n.png"
+        },
+        {
+            "src": "new.png"
         }
     ]
 }
