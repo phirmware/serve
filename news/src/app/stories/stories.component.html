@@ -1,5 +1,5 @@
 <div class="ui card mycard" *ngFor="let result of results">
-    <div class="image">
+  <div class="image">
       <img src="{{result.media[0]['media-metadata'][2].url}}">
     </div>
     <div class="content">
@@ -8,7 +8,7 @@
         <span class="date">{{result['published_date']}}</span>
       </div>
       <div class="description">
-          {{result.title}}
+        <a href="{{result.url}}">  {{result.title}} </a>
       </div>
     </div>
     <div class="extra content">
