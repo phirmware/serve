@@ -1,0 +1,20 @@
+<div class="ui card mycard" *ngFor="let result of results">
+    <div class="image">
+      <img src="{{result.media[0]['media-metadata'][2].url}}">
+    </div>
+    <div class="content">
+      <a class="header">{{result.byline}}</a>
+      <div class="meta">
+        <span class="date">{{result['published_date']}}</span>
+      </div>
+      <div class="description">
+          {{result.title}}
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <i class="user icon"></i>
+        {{result.section}}
+      </a>
+    </div>
+  </div>

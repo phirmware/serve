@@ -1,0 +1,7 @@
+.container{
+    background: linear-gradient(blue,blue,darkblue);
+    text-align: center;
+    padding: 5px; 
+    color:white;
+    margin-bottom: 8vh;
+}
