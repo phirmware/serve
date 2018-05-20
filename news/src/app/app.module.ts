@@ -10,6 +10,7 @@ import 'hammerjs';
 import { ArtComponent } from './art/art.component';
 import { AutomobilesComponent } from './automobiles/automobiles.component';
 import { TechComponent } from './tech/tech.component';
+import { MoviesComponent } from './movies/movies.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { TechComponent } from './tech/tech.component';
     StoriesComponent,
     ArtComponent,
     AutomobilesComponent,
-    TechComponent
+    TechComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { TechComponent } from './tech/tech.component';
       {path:'',component:StoriesComponent},
       {path:'art',component:ArtComponent},
       {path:'automobiles',component:AutomobilesComponent},
-      {path:'tech',component:TechComponent}
+      {path:'tech',component:TechComponent},
+      {path:'movies',component:MoviesComponent}
     ])
     
   ],
