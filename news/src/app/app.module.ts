@@ -11,6 +11,9 @@ import { ArtComponent } from './art/art.component';
 import { AutomobilesComponent } from './automobiles/automobiles.component';
 import { TechComponent } from './tech/tech.component';
 import { MoviesComponent } from './movies/movies.component';
+import { CoolComponent } from './cool/cool.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -20,7 +23,8 @@ import { MoviesComponent } from './movies/movies.component';
     ArtComponent,
     AutomobilesComponent,
     TechComponent,
-    MoviesComponent
+    MoviesComponent,
+    CoolComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,8 @@ import { MoviesComponent } from './movies/movies.component';
       {path:'automobiles',component:AutomobilesComponent},
       {path:'tech',component:TechComponent},
       {path:'movies',component:MoviesComponent}
-    ])
+    ]),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
     
   ],
   providers: [],
