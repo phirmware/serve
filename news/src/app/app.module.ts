@@ -37,7 +37,7 @@ import { environment } from '../environments/environment';
       {path:'tech',component:TechComponent},
       {path:'movies',component:MoviesComponent}
     ]),
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     
   ],
   providers: [],
