@@ -5,7 +5,7 @@
   "background_color": "cyan",
   "display": "standalone",
   "scope": "/",
-  "start_url": "https://phirmware.github.io/news/index.html",
+  "start_url": "https://phirmware.github.io/news/",
   "icons": [
     {
       "src": "assets/icons/n.png",
