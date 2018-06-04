@@ -1,0 +1,72 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css';
+
+.sidebar{
+    transition: 1s;
+    transform: translate3d(260px, 0, 0);
+    transition: transform 500ms ease, -webkit-transform 500ms ease;
+}
+.card{
+    display:inline-block;
+    height: 35vh;
+    width: 17vw;
+    margin: 20px;
+    background: #1B1C1D;
+    margin-bottom: 4vh;
+    margin-top: 1vh;
+    color: white;
+}
+.card:hover{
+    box-shadow: 8px 8px 5px rgba(0, 0, 0,0.5);
+    transform: scale(1.1);
+    transition: .2s;
+}
+.ui.vertical.menu .item > i.icon {
+    width: 1.18em;
+    float: left;
+    margin: 0em 0.5em 0em 0em;
+}
+.card-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.btn-more{
+    background: white;
+    border: none;
+    color: black;
+    padding: 4px 2px 4px 2px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+}
+.btn-more:hover{
+    background: whitesmoke;
+}
+.btn-more:active{
+    background: blue;
+}
+
+@media(max-width:1000px){
+    .card{
+       width: 23%;
+    }
+}
+
+@media(max-width: 750px){
+    .card{
+        width: 30vw;
+    }
+}
+@media(max-width:600px){
+    .card{
+        width: 45vw;
+    }
+}
+@media(max-width:540px){
+    .card{
+        width:40vw;
+        margin: 1vh auto;
+
+    }
+}

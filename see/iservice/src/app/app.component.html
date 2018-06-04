@@ -1,0 +1,16 @@
+<nav>
+  <ul class="hide">
+    <li class="logo">I service</li>
+  </ul>
+  <ul>
+    <li routerLink="/home" routerLinkActive="active">Home</li>
+    <li routerLink="/services" routerLinkActive="active">Services</li>
+    <li *ngIf="loggedIn()" routerLink="/register" routerLinkActive="active">Register Company</li>
+    <li class="logout" *ngIf="loggedIn()" routerLinkActive="active" (click)="logOut()">LogOut</li>
+    <li *ngIf="!loggedIn()" routerLink="/login" routerLinkActive="active">Login</li>
+    <li *ngIf="!loggedIn()" routerLink="/signup" routerLinkActive="active">Signup</li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+<footer>
+</footer>

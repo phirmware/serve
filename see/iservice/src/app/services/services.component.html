@@ -1,0 +1,56 @@
+<div class="ui bottom attached segment pushable">
+  <div class="ui inverted left vertical sidebar menu" id="sidebar">
+    <a class="item">
+      <i class="home icon"></i>
+      Categories
+    </a>
+    <a class="item" (click)="findUsers('IT Development')">
+      <i class="laptop icon"></i>
+      IT Development
+    </a>
+    <a class="item" (click)="findUsers('Business')">
+      <i class="balance scale icon"></i>
+      Business
+    </a>
+    <a class="item" (click)="findUsers('School')">
+      <i class="book icon"></i>
+      School
+    </a>
+    <a class="item" (click)="findUsers('Agriculture')">
+      <i class="calendar icon"></i>
+      Agriculture
+    </a>
+    <a class="item" (click)="findUsers('Food & Dishes')">
+      <i class="food icon"></i>
+      Food & Dishes
+    </a>
+    <a class="item" (click)="findUsers('Events')">
+      <i class="birthday cake icon"></i>
+      Events
+    </a>
+    <a class="item" (click)="findUsers('Medicine')">
+      <i class="plus icon"></i>
+      Medicine
+    </a>
+  </div>
+  <div class="pusher">
+    <div class="ui basic segment">
+      <div class="ui icon buttons">
+        <button class="ui button showCategories" (click)="toggleNav()">
+          <i class="align justify icon"></i>
+        </button>
+      </div>
+      <h3 class="ui header" style="text-align: center;letter-spacing: 1px;">Services</h3>
+      <div class="card-container">
+        <a [routerLink]="['/user',data.company]" *ngFor="let data of data">
+          <div class="card">
+            <img src="../../assets/avatar2.png" style="width: 100%;height: 40%;">
+            <p style="text-align: center;font-weight: bolder">{{data.company}}</p>
+            <p style="text-align: center;font-weight: bold">{{data.category}}</p>
+            <p style="text-align: center;font-weight: lighter;">{{data.service}}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
