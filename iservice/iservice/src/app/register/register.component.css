@@ -1,0 +1,70 @@
+form{
+    background: rgb(86, 135, 168);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 60vw;
+    top: 4vh;
+    margin:4vh auto;
+}
+h1{
+    margin-top: 0px;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+input{
+    margin: 2px auto;
+    width: 90%;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+    border: 1px solid rgb(18, 18, 114);
+    letter-spacing: 2px;
+}
+button{
+    width: 90%;
+    background: rgb(14, 14, 170);
+    border: none;
+    padding: 20px 20px 20px 20px;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+    letter-spacing: 3px;
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+    cursor: pointer;
+}
+button:hover{
+    background: rgb(12, 12, 77);
+}
+select{
+    margin: 0px auto;
+    background: white;
+    width: 90%;
+    border: 1px solid rgb(18, 18, 114);
+    padding: 10px 20px 10px 20px;
+    font-size: 15px;
+    font-weight: bolder;
+}
+label{
+    margin: 0px auto;
+    font-size: 10px;
+    font-weight: bolder;
+    margin-top: 1vh;
+    letter-spacing: 0.5px;
+    padding: 4px;
+}
+.body{
+    background: white;
+    height: 100vh;
+    top: 0px;
+    display: flex;
+}
+
+
+@media(max-width:600px){
+    form{
+        width: 70vw;
+    }
+}

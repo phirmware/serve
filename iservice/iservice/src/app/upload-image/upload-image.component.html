@@ -1,0 +1,7 @@
+<div class="container">
+  <h2 style="text-align: center;">Upload Your Image</h2>
+  <form enctype="multipart/form-data">
+      <input name="image" type="file" (change)="onFileSelected($event)">
+      <button (click)="uploadImage()">Upload</button>
+  </form>
+</div>

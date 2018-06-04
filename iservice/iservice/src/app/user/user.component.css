@@ -1,0 +1,23 @@
+.company{
+    height: 90vh;
+}
+.header{
+    background: rgb(7, 7, 78);
+    color: white;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header>h2{
+    display: block;
+    margin: 4px auto;
+}
+.service{
+    text-align: center;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    padding: 10px;
+}

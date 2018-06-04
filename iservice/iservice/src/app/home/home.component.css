@@ -1,0 +1,29 @@
+.landing{
+    background: rgba(109, 135, 168, 0.5);
+    height: 65vh;
+    z-index:1;
+}
+img{
+    height: 100%;
+    width: 100vw;
+    z-index: -1;
+}
+span{
+    margin-top: 10vh;
+    width: 30vw;
+    border-top: 4px solid rgb(22, 22, 165);
+    letter-spacing: 1px;
+    font-weight: lighter;
+    padding: 10px 4px 10px 4px;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+@media(max-width:700px){
+    span{
+        width: 80vw;
+    }
+}

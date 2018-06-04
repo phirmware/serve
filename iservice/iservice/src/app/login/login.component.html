@@ -1,0 +1,9 @@
+<div>
+  <h2 style="text-align: center;margin-top:4vh;">Login</h2>
+  <form #user="ngForm" (ngSubmit)="sendInfo(user.value)">
+      <p style="text-align:center;color:red;font-size: 20px;font-weight: bolder;">{{errorMessage}}</p>
+    <input type="email" ngModel #username="ngModel" name="username" required="required" placeholder="Email">
+    <input type="password" ngModel #password="ngModel" name="password" required="required" placeholder="Password">
+    <button>Login</button>
+  </form>
+</div>
