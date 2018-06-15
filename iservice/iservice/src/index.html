@@ -11,5 +11,12 @@
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    navigator.serviceWorker.register('./sw.js').then(()=>{
+      console.log('Success');
+    }).catch(()=>{
+      console.log('Registeration failed!!');
+    })
+  </script>
 </body>
 </html>
