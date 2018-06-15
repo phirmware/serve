@@ -24,7 +24,6 @@ export class ServicesComponent implements OnInit {
     this.service.findData(category).subscribe(response=>{
        this.data = undefined;
        this.data = response.json();
-       console.log(this.data)
     })
   }
 

@@ -58,6 +58,13 @@ app.post("/", function(req, res) {
     });
 });
 
+app.post('/showuser',(req,res)=>{
+  User.find({email:req.body.username}).then((user)=>{
+    res.json(user);
+  }).catch((err)=>{
+    res.json('Error Ocurred!!');
+  })
+})
 
 app.get('/category/:id',(req,res)=>{
   User.find({category:req.params.id}).then((users)=>{
@@ -99,7 +106,6 @@ app.post('/login',passport.authenticate('local',{
   failureRedirect:'/jwtfailure'
 }),(req,res)=>{});
 
-
 app.get('/user/:id',(req,res)=>{
   User.find({company:req.params.id}).then((user)=>{
     res.json(user);
@@ -107,7 +113,6 @@ app.get('/user/:id',(req,res)=>{
     console.log(err);
   });
 });
-
 
 app.listen(3000, () => {
   console.log("Listening at port 3000");

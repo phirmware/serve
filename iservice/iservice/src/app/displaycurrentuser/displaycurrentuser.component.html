@@ -1,0 +1,21 @@
+<div class="body">
+    <p *ngIf="currentUser">Logged in as {{currentUser}}</p>
+      <h3 style="text-align: center;text-decoration: underline;">Registered Companies</h3>
+    <div class="userinfo" *ngFor="let info of userInfo">
+        <li>
+            <b>Category - </b> {{info.category}}</li>
+        <li>
+            <b>Company - </b> {{info.company}}</li>
+        <li>
+            <b>Description - </b> {{info.description}}</li>
+        <li>
+            <b>Location - </b> {{info.location}}</li>
+        <li>
+            <b>Phone_no - </b> {{info.phone}}</li>
+        <li>
+            <b>Service - </b> {{info.service}}</li>
+        <li>
+            <b>Owner - </b> {{info.user}}</li>
+            <hr>
+    </div>
+</div>

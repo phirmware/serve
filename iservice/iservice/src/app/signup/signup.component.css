@@ -30,3 +30,6 @@ button:hover{
 div{
     height: 85vh;
 }
+.errMsg{
+    transition: 1s;
+}

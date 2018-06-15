@@ -10,12 +10,15 @@
     height: 35vh;
     width: 17vw;
     margin: 20px;
-    background: #1B1C1D;
+    background:radial-gradient(rgb(14, 14, 170), #1B1C1D, #1B1C1D, #1B1C1D);
     margin-bottom: 4vh;
     margin-top: 1vh;
     color: white;
+    transition: .2s;
+    border: 2px solid rgb(8, 7, 83);
 }
 .card:hover{
+    background:radial-gradient(#1B1C1D,rgb(14, 14, 170));
     box-shadow: 8px 8px 5px rgba(0, 0, 0,0.5);
     transform: scale(1.1);
     transition: .2s;
@@ -30,6 +33,10 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+.card-header{
+    font-family: Aclonica;
+	font-size: 19px;
 }
 .btn-more{
     background: white;

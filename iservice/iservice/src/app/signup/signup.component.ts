@@ -10,12 +10,12 @@ import { Router } from "@angular/router";
 })
 export class SignupComponent implements OnInit {
   errorMessage:any;
-  constructor(private http:Http,private router:Router) { }
+  constructor(private http:Http,private router:Router,private service:IserviceService) { }
 
   ngOnInit() {
   }
   sendInfo(info){
-    this.http.post("http://localhost:3000/signup",info).subscribe(response =>{
+    this.service.signUp(info).subscribe(response =>{
       var token = response.json();
       if(token && token.token){
         localStorage.setItem('token',token.token);
