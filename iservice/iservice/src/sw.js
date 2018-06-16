@@ -23,51 +23,77 @@ this.addEventListener("fetch", function(event) {
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Amaranth" />
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1976d2">
+    <style>
+    .landing{
+      background: rgba(109, 135, 168, 0.5);
+      height: 65vh;
+      z-index:1;
+  }
+  img{
+      height: 100%;
+      width: 100vw;
+      z-index: -1;
+  }
+  span{
+      margin-top: 10vh;
+      width: 30vw;
+      border-top: 4px solid rgb(22, 22, 165);
+      letter-spacing: 1px;
+      font-weight: lighter;
+      padding: 10px 4px 10px 4px;
+  }
+  .ui.menu{
+    margin: 0rem 0em;
+  }
+  .info{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+  }
+  #small-nav{
+    margin-bottom:0px;
+  }
+  @media(max-width:700px){
+      span{
+          width: 80vw;
+      }
+  }
+    </style>
   </head>
   <body>
-  <style>
-  body{
-    margin:0px;
-  
-  }
-  nav{
-    height: 5vh;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
-}
-.hide{
-    display: none;
-}
-ul{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-li{
-    padding: 4px 4px 4px 4px;
-    letter-spacing: normal;
-}
-.logo{
-    display: none;
-    font-size: 15px;
-    letter-spacing: normal;
-    font-weight: lighter;
-}
-  
-  </style>
-  <nav>
-  <ul class="hide">
-    <li class="logo">I service</li>
-  </ul>
-  <ul>
-    <li routerLink="/home" routerLinkActive="active">Home</li>
-    <li routerLink="/services" routerLinkActive="active">Services</li>
-    <li *ngIf="loggedIn()" routerLink="/register" routerLinkActive="active">Register Company</li>
-    <li *ngIf="loggedIn()" routerLink="/loggedinuser" routerLinkActive="active"><i class="user icon"></i></li>
-    <li class="logout" *ngIf="loggedIn()" routerLinkActive="active" (click)="logOut()">LogOut</li>
-  </ul>
-</nav>
+  <div class="ui secondary pointing menu" id="small-nav">
+  <a class="item" routerLink="/home" routerLinkActive="active">
+    Home
+  </a>
+  <a class="item" routerLink="/services" routerLinkActive="active">
+    Services
+  </a>
+  <a class="item" *ngIf="loggedIn()" routerLink="/register" routerLinkActive="active">
+    Register company
+  </a>
+  <a class="item" *ngIf="loggedIn()" routerLink="/loggedinuser" routerLinkActive="active">
+    <i class="user icon"></i>
+  </a>
+  <div class="right menu">
+    <a class="ui item" *ngIf="loggedIn()" routerLinkActive="active" (click)="logOut()">
+      Logout
+    </a>
+  </div>
+</div>
+<div class="container">
+  <div class="landing">
+    <img src="../../assets/bg.jpg" alt="">
+  </div>
+  <div class="info">
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab cupiditate nostrum magni nisi! Dolores excepturi placeat, accusamus atque, laudantium perferendis pariatur tempora, aliquam porro omnis at sit reiciendis id!</span>
+    <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi cumque dolorem quam, deleniti corrupti a qui ipsum eius pariatur nihil fugiat id totam temporibus quidem dignissimos, suscipit, voluptate autem ratione?</span>
+  </div>
+  <div class="info">
+    <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam exercitationem rem labore eveniet, enim non libero autem illum ipsam nesciunt voluptate nam tenetur mollitia provident iure esse laudantium vero corporis.</span>
+  </div>
+</div>
+    
   </body>
   </html> 
                   `,

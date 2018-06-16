@@ -62,27 +62,26 @@ footer{
     margin-bottom: 0px;
     height: 10vh;
 }
+#small-nav{
+    display: none;
+}
 
 
 /* Mobile View */
-@media(max-width:600px){
-    nav{
-        height: 5vh;
-        justify-content: space-between;
-        align-content: center;
-        align-items: center;
+@media(max-width:720px){
+    #big-nav{
+        display: none;
+    }
+    #small-nav{
+        display: flex;
+        margin-bottom: 0px;
     }
     .hide{
         display: none;
     }
-    ul{
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-    }
-    li{
-        padding: 4px 4px 4px 4px;
-        letter-spacing: normal;
+    .ui.secondary.pointing.menu .active.item{
+        border-color:rgb(14, 14, 170);
+        color:blue;
     }
     .logo{
         display: none;

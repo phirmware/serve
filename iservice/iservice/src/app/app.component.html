@@ -1,4 +1,33 @@
-<nav>
+<!-- Small screen navigation-->
+<div class="ui secondary pointing menu" id="small-nav">
+  <a class="item" routerLink="/home" routerLinkActive="active">
+    Home
+  </a>
+  <a class="item" routerLink="/services" routerLinkActive="active">
+    Services
+  </a>
+  <a class="item" *ngIf="loggedIn()" routerLink="/register" routerLinkActive="active">
+    Register company
+  </a>
+  <a class="item" *ngIf="loggedIn()" routerLink="/loggedinuser" routerLinkActive="active">
+    <i class="user icon"></i>
+  </a>
+  <div class="right menu">
+    <a class="ui item" *ngIf="loggedIn()" routerLinkActive="active" (click)="logOut()">
+      Logout
+    </a>
+    <a class="ui item" *ngIf="!loggedIn()" routerLink="/login" routerLinkActive="active">
+      Login
+    </a>
+    <a class="ui item" *ngIf="!loggedIn()" routerLink="/signup" routerLinkActive="active">
+      Signup
+    </a>
+  </div>
+</div>
+
+
+<!--Big screen navigation-->
+<nav id="big-nav">
   <ul class="hide">
     <li class="logo">I service</li>
   </ul>
@@ -12,6 +41,7 @@
     <li *ngIf="!loggedIn()" routerLink="/signup" routerLinkActive="active">Signup</li>
   </ul>
 </nav>
+
 <router-outlet></router-outlet>
 <footer>
 </footer>
