@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
       var token = response.json();
       if(token && token.token){
         localStorage.setItem('token',token.token);
-        this.router.navigate(['/register']);
+        this.router.navigate(['/step1']);
       }else{
         this.errorMessage = response.json().message;
       }

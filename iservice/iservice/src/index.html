@@ -4,16 +4,15 @@
   <meta charset="utf-8">
   <title>Iservice</title>
   <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aclonica" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="./assets/manifest-icons/n.png">
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <app-root></app-root>
   <script>
-    navigator.serviceWorker.register('/sw.js').then(()=>{
+    navigator.serviceWorker.register('sw.js').then(()=>{
       console.log('Success');
     }).catch(()=>{
       console.log('Registeration failed!!');

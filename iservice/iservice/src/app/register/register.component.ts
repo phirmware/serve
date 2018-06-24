@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { IserviceService } from './../iservice.service';
 import { Component, OnInit } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,12 @@ export class RegisterComponent implements OnInit {
 
   constructor(public service: IserviceService ,public router:Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let token = localStorage.getItem('token');
+    let helper = new JwtHelperService();
+    let user = helper.decodeToken(token);
+  }
+
   postData(data) {
     var info = JSON.stringify(data);
     this.service.postData(info).subscribe(response => {
@@ -23,7 +29,7 @@ export class RegisterComponent implements OnInit {
       for (let i = 0; i < this.input.length; i++) {
         this.input[i].value = "";
       }
-      this.router.navigate(['/upload'])
+      this.router.navigate(['/services'])
     });
   }
 

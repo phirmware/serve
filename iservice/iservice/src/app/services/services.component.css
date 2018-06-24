@@ -6,21 +6,29 @@
     transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
 .card{
-    display:inline-block;
-    height: 35vh;
-    width: 17vw;
+    display:flex;
+    height: 163.25px;
+    width: 40vw;
     margin: 20px;
     background:radial-gradient(#1B1C1D, #1B1C1D, #1B1C1D);
     margin-bottom: 4vh;
     margin-top: 1vh;
     color: white;
     transition: .2s;
-    border: 2px solid rgb(8, 7, 83);
+    border: 2px solid black;
+}
+.card-details{
+    width:60%;
+    background: whitesmoke;
+    color: black;
+}
+.card-logo{
+    width: 40%;
 }
 .card:hover{
-    background:radial-gradient(#1B1C1D,rgb(14, 14, 170));
+    background:radial-gradient(#1B1C1D,black);
     box-shadow: 8px 8px 5px rgba(0, 0, 0,0.5);
-    transform: scale(1.1);
+    transform: scale(1);
     transition: .2s;
 }
 .ui.vertical.menu .item > i.icon {
@@ -36,7 +44,9 @@
 }
 .card-header{
     font-family: Aclonica;
-	font-size: 19px;
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 10%;
 }
 .btn-more{
     background: white;
@@ -54,26 +64,66 @@
     background: blue;
 }
 
+.inner-circle{
+    animation: load 2s infinite;
+}
+
+
+@keyframes load{
+    20%{
+        r:15vw;
+        fill: black;
+    }
+}
+
 @media(max-width:1000px){
-    .card{
-       width: 23%;
-    }
+   
 }
 
-@media(max-width: 750px){
+@media(max-width: 850px){
+   .card{
+       width: 45vw;
+   }
+}
+@media(max-width:790px){
     .card{
-        width: 30vw;
+        width: 48vw;
+        margin: 1vw;
     }
 }
-@media(max-width:600px){
+@media(max-width:720px){
     .card{
-        width: 45vw;
+        width: 70vw;
     }
 }
-@media(max-width:540px){
+@media(max-width:580px){
     .card{
-        width:40vw;
-        margin: 1vh auto;
-
+        width: 80vw;
+    }
+}
+@media(max-width:450px){
+    .card{
+        width: 95vw;
+        border: 1px solid black;
+    }
+    .card:hover{
+        transform: scale(1);
+    }
+}
+@media(max-width:320px){
+    .card{
+        width: 95vw;
+    }
+    .card-logo{
+        width: 30%;
+    }
+    .card-details{
+        width: 70%;
+    }
+    .card-header{
+        font-family: Aclonica;
+        font-size: 12px;
+        font-weight: lighter;
+        margin-top: 10%;
     }
 }

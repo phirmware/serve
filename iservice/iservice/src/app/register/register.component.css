@@ -1,5 +1,5 @@
 form{
-    background: rgb(86, 135, 168);
+    background: rgb(9, 9, 150);
     color: white;
     display: flex;
     flex-direction: column;
@@ -62,9 +62,14 @@ label{
     display: flex;
 }
 
-
 @media(max-width:600px){
     form{
         width: 70vw;
+    }
+}
+
+@media(max-width:470px){
+    form{
+        width: 85vw;
     }
 }

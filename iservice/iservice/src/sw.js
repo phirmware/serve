@@ -70,20 +70,19 @@ this.addEventListener("fetch", function(event) {
     Services
   </a>
   <a class="item" *ngIf="loggedIn()" routerLink="/register" routerLinkActive="active">
-    Register company
+    Register
   </a>
-  <a class="item" *ngIf="loggedIn()" routerLink="/loggedinuser" routerLinkActive="active">
-    <i class="user icon"></i>
-  </a>
+  
   <div class="right menu">
-    <a class="ui item" *ngIf="loggedIn()" routerLinkActive="active" (click)="logOut()">
-      Logout
-    </a>
+  <a class="item" *ngIf="loggedIn()" routerLink="/loggedinuser" routerLinkActive="active">
+  <i class="user icon"></i>
+</a>
   </div>
 </div>
+<p style="text-align:center;position:sticky;top:0px;">No Connection ....</p>
 <div class="container">
   <div class="landing">
-    <img src="../../assets/bg.jpg" alt="">
+    <img src="https://www.ecommercetimes.com/article_images/story_graphics_xlarge/xl-2015-customer-service-1.jpg" alt="">
   </div>
   <div class="info">
     <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab cupiditate nostrum magni nisi! Dolores excepturi placeat, accusamus atque, laudantium perferendis pariatur tempora, aliquam porro omnis at sit reiciendis id!</span>

@@ -1,6 +1,9 @@
+.container{
+    background: rgb(22, 22, 165);
+}
 .landing{
     background: rgba(109, 135, 168, 0.5);
-    height: 65vh;
+    height: 78vh;
     z-index:1;
 }
 img{
@@ -17,13 +20,52 @@ span{
     padding: 10px 4px 10px 4px;
 }
 .info{
+    background: white;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
 }
+.show{
+    margin-top: 0px;
+    top: 0px;
+}
+.card-img{
+    width: 29vw;
+    height: 30vh;
+    z-index: -1;
+}
+.show>p{
+    background: whitesmoke;
+    border: 1px solid black;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    width: 30vw;
+    height: 35vh;
+}
+svg{
+    background: white;
+    bottom: 0px;
+    margin-bottom: 0px;
+    border: none;
+}
+rect{
+    bottom: 0px;
+    margin: 0px;
+}
 @media(max-width:700px){
     span{
         width: 80vw;
+    }
+    .show>p{
+        width: 80vw;
+    }
+    .card-img{
+        width: 60vw;
+    }
+    .landing{
+        height: 40vh;
     }
 }

@@ -2,7 +2,7 @@
   <h2 style="text-align: center;margin-top:4vh;">Signup</h2>
   <p class="errMsg"style="text-align:center;color:red;font-size: 20px;font-weight: bolder;">{{errorMessage}}</p>
   <form #user="ngForm" (ngSubmit)="sendInfo(user.value)">
-    <input type="email" ngModel #username="ngModel" name="username" required="required" placeholder="Email">
+    <input type="email" ngModel #username="ngModel" name="username" required="required" placeholder="Company Email">
     <input type="password" ngModel #password="ngModel" name="password" required="required" placeholder="Password">
     <button>SignUp</button>
   </form>

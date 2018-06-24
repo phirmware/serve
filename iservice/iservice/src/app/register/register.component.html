@@ -1,12 +1,12 @@
 <div class="body">
   <form #userInfo="ngForm" (ngSubmit)="postData(userInfo.value)">
-    <h1 style="text-align: center">Register your company</h1>
+    <br>
     <p *ngIf="user.touched && !user.value" style="color:red;font-weight: bold">Fill in your name</p>
     <input type="text" #user="ngModel" ngModel required name="user" placeholder="Full-Name">
     <p *ngIf="company.touched && !company.value" style="color:red;font-weight: bold">Fill in your company name</p>
     <input type="text" #company="ngModel" ngModel name="company" placeholder="Company Name">
     <input type="text" ngModel #service="ngModel" name="service" placeholder="Your service">
-    <input type="email" #email="ngModel" ngModel name="email" required placeholder="Email">
+    <input id="email" type="email" #email="ngModel" ngModel name="email" value="user.username">
     <input type="text" ngModel #phone="ngModel" name="phone" placeholder="Phone Number">
     <input type="text" ngModel #location="ngModel" name="location" placeholder="Location">
     <label>Choose subscription type.... Premium</label>
@@ -27,6 +27,6 @@
     </select>
     <br>
     <input type="text-area" ngModel #description="ngModel" name="description" required placeholder="Short note about your service">
-    <button *ngIf="user.value && email.value && isPremium.value && category.value">Register</button>
+    <button *ngIf="user.value && isPremium.value && category.value">Register</button>
   </form>
 </div>

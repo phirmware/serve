@@ -33,6 +33,7 @@
       Medicine
     </a>
   </div>
+  
   <div class="pusher">
     <div class="ui basic segment">
       <div class="ui icon buttons">
@@ -40,14 +41,29 @@
           <i class="align justify icon"></i>
         </button>
       </div>
-      <h3 class="ui header" style="text-align: center;letter-spacing: 1px;">Cards</h3>
+      <svg *ngIf="data == undefined" width="100vw" height="50vh"
+          version="1.1"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
+        <circle cx="48vw" cy="170" r="10vw" stroke="blue" stroke-width="4px" fill="white"/>
+        <circle class="inner-circle" cx="48vw" cy="170" r="5vw" stroke="blue" fill="blue"/>
+      </svg>
+      <h3 *ngIf="data !== undefined" class="ui header" style="text-align: center;letter-spacing: 1px;">{{category}}</h3>
       <div class="card-container">
         <a [routerLink]="['/user',data.company]" *ngFor="let data of data">
           <div class="card">
-            <p class="card-header" style="text-align: center;">{{data.company}}</p>
-            <p style="text-align: center;font-weight: bold">{{data.category}}</p>
-            <p style="text-align: center;font-weight: lighter;">{{data.service}}</p>
-            <p style="text-align: center;">{{data.location}}</p>
+            <div class="card-logo">
+                <p class="card-header" style="text-align: center;">{{data.company}}</p>
+                <p style="text-align: center">{{data.user}}</p>
+            </div>
+            <div class="card-details">
+               
+                <p style="text-align: center;font-weight: bold">{{data.category}}</p>
+                <p style="text-align: center;font-weight: lighter;"><i class="phone icon"></i>{{data.phone}}</p>
+                <p style="text-align: center"><i class="mail icon"></i>{{data.email}}</p>
+                <p style="text-align: center;"><i class="map marker alternate icon"></i>{{data.location}}</p>
+            </div>
+            
           </div>
         </a>
       </div>

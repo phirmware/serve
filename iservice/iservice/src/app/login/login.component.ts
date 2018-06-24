@@ -10,18 +10,19 @@ import { Component, OnInit } from "@angular/core";
 export class LoginComponent implements OnInit {
   errorMessage: string;
   constructor(private http: Http, private router: Router) {}
-
+  //url = "https://evening-peak-69588.herokuapp.com/"
+  url = 'http://localhost:3000/'
   ngOnInit() {}
   //login
   sendInfo(user) {
     //post to login url
-    this.http.post("http://localhost:3000/login", user).subscribe(response => {
+    this.http.post(this.url + "login", user).subscribe(response => {
       var check = response.json().message;
       //check if login worked
       if (check == "success") {
         //login worked then get token
         this.http
-          .post("http://localhost:3000/jwt", user)
+          .post(this.url + "jwt", user)
           .subscribe(response => {
             var token = response.json();
             if (token && token.token) {

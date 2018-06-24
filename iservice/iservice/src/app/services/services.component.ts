@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesComponent implements OnInit {
   data:any;
+  category = 'Cards';
   constructor(public service:IserviceService) { }
 
   ngOnInit() {
@@ -21,9 +22,15 @@ export class ServicesComponent implements OnInit {
   }
 
   findUsers(category){
+    this.data = undefined;
+    document.getElementById('sidebar').classList.toggle('visible');
     this.service.findData(category).subscribe(response=>{
-       this.data = undefined;
        this.data = response.json();
+       if(response.json()[0] == undefined){
+         this.category = 'Empty';
+       } else{
+         this.category = response.json()[0].category;
+       }
     })
   }
 

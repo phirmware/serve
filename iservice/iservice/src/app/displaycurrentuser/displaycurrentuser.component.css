@@ -12,3 +12,14 @@ li{
     list-style: none;
     text-align: center;
 }
+.inner-circle{
+    animation: load 2s infinite;
+}
+
+
+@keyframes load{
+    20%{
+        r:10vw;
+        fill: black;
+    }
+}

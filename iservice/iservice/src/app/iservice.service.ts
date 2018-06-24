@@ -6,7 +6,20 @@ import { Http } from "@angular/http";
   providedIn: "root"
 })
 export class IserviceService {
+  //url = "https://evening-peak-69588.herokuapp.com/";
   url = "http://localhost:3000/";
+  poo = {
+    user: '',
+    company: '',
+    service: '',
+    email: '',
+    phone: '',
+    location: '',
+    plan: '',
+    category: '',
+    description: ''
+  }
+
   constructor(private http: Http) {}
 
   //get services
@@ -16,8 +29,7 @@ export class IserviceService {
 
   //register company
   postData(info) {
-    var data = JSON.parse(info);
-    return this.http.post(this.url, data);
+    return this.http.post(this.url, info);
   }
 
   //find category

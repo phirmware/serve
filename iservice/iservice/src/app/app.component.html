@@ -6,16 +6,13 @@
   <a class="item" routerLink="/services" routerLinkActive="active">
     Services
   </a>
-  <a class="item" *ngIf="loggedIn()" routerLink="/register" routerLinkActive="active">
-    Register company
-  </a>
-  <a class="item" *ngIf="loggedIn()" routerLink="/loggedinuser" routerLinkActive="active">
-    <i class="user icon"></i>
+  <a class="item" *ngIf="loggedIn()" routerLink="/step1" routerLinkActive="active">
+    Register
   </a>
   <div class="right menu">
-    <a class="ui item" *ngIf="loggedIn()" routerLinkActive="active" (click)="logOut()">
-      Logout
-    </a>
+      <a class="item" *ngIf="loggedIn()" routerLink="/loggedinuser" routerLinkActive="active">
+        <i class="user icon"></i>
+      </a>
     <a class="ui item" *ngIf="!loggedIn()" routerLink="/login" routerLinkActive="active">
       Login
     </a>
@@ -34,7 +31,7 @@
   <ul>
     <li routerLink="/home" routerLinkActive="active">Home</li>
     <li routerLink="/services" routerLinkActive="active">Services</li>
-    <li *ngIf="loggedIn()" routerLink="/register" routerLinkActive="active">Register Company</li>
+    <li *ngIf="loggedIn()" routerLink="/step1" routerLinkActive="active">Register Company</li>
     <li *ngIf="loggedIn()" routerLink="/loggedinuser" routerLinkActive="active"><i class="user icon"></i></li>
     <li class="logout" *ngIf="loggedIn()" routerLinkActive="active" (click)="logOut()">LogOut</li>
     <li *ngIf="!loggedIn()" routerLink="/login" routerLinkActive="active">Login</li>

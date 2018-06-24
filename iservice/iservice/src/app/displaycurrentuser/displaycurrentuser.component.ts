@@ -1,6 +1,7 @@
 import { Http } from '@angular/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-displaycurrentuser',
@@ -10,18 +11,26 @@ import { Component, OnInit } from '@angular/core';
 export class DisplaycurrentuserComponent implements OnInit {
   currentUser;
   userInfo;
-  constructor(private http:Http) { }
-
+  url = 'http://localhost:3000/'
+  //url = 'https://evening-peak-69588.herokuapp.com/'
+  constructor(private http:Http,private router:Router) { }
+  
   ngOnInit() {
     let token = localStorage.getItem('token');
     let helper = new JwtHelperService();
     let user = helper.decodeToken(token);
     if(user){
       this.currentUser = user.username;
-      this.http.post("http://localhost:3000/showuser",{username:this.currentUser}).subscribe(response=>{
+      this.http.post(this.url + "showuser",{username:this.currentUser}).subscribe(response=>{
          this.userInfo = response.json();
     })
     }
+  }
+
+   //logout user
+   logOut(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/home']);
   }
 
 }
