@@ -16,8 +16,7 @@ export class IserviceService {
     phone: '',
     location: '',
     plan: '',
-    category: '',
-    description: ''
+    category: ''
   }
 
   constructor(private http: Http) {}
