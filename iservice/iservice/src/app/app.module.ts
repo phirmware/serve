@@ -21,12 +21,14 @@ import { SignupStepComponent } from './signup-step/signup-step.component';
 import { SignupStep1Component } from './signup-step1/signup-step1.component';
 import { SignupStep2Component } from './signup-step2/signup-step2.component';
 import { SignupStep3Component } from './signup-step3/signup-step3.component';
+import { DetailComponent } from './detail/detail.component';
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "signup", component: SignupComponent },
   { path: "login", component: LoginComponent },
   { path: "services", component: ServicesComponent },
+  { path: "userdetail/:id",component: DetailComponent},
   { path: "user/:id", component: UserComponent },
   { path: "upload", component: UploadImageComponent },
   { path: "loggedinuser", component: DisplaycurrentuserComponent },
@@ -56,7 +58,8 @@ const routes: Routes = [
     SignupStepComponent,
     SignupStep1Component,
     SignupStep2Component,
-    SignupStep3Component
+    SignupStep3Component,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

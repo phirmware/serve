@@ -1,6 +1,3 @@
-.container{
-    background: rgb(22, 22, 165);
-}
 .landing{
     background: rgba(109, 135, 168, 0.5);
     height: 78vh;
@@ -13,10 +10,11 @@ img{
 }
 span{
     margin-top: 10vh;
-    width: 30vw;
+    width: 40vw;
     border-top: 4px solid rgb(22, 22, 165);
     letter-spacing: 1px;
-    font-weight: lighter;
+    font-weight: normal;
+    font-size:18px;
     padding: 10px 4px 10px 4px;
 }
 .info{
@@ -26,36 +24,21 @@ span{
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.show{
-    margin-top: 0px;
-    top: 0px;
-}
+
 .card-img{
     width: 29vw;
     height: 30vh;
     z-index: -1;
 }
-.show>p{
-    background: whitesmoke;
-    border: 1px solid black;
-    border-radius: 20px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 15px;
-    width: 30vw;
-    height: 35vh;
-}
-svg{
-    background: white;
-    bottom: 0px;
-    margin-bottom: 0px;
-    border: none;
-}
-rect{
-    bottom: 0px;
-    margin: 0px;
+
+
+.landing{
+    display: none;
 }
 @media(max-width:700px){
+    .landing{
+        display: block;
+    }
     span{
         width: 80vw;
     }

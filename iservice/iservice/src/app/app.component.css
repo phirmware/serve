@@ -18,18 +18,10 @@ li{
     cursor: pointer;
     outline: none;
 }
-li:hover{
-    background: white;
-    color: blue;
-    border-bottom: 1px solid  rgb(14, 14, 170);
-    border-right: 1px solid  rgb(14, 14, 170);
-}
+
 .logout:hover{
     background: red;
     color: white;
-    border-bottom: 2px solid  rgb(14, 14, 170);
-    border-top: 2px solid  rgb(14, 14, 170);
-    border-right: 2px solid  rgb(14, 14, 170);
 }
 .active{
     background: white;
@@ -56,12 +48,7 @@ ul{
     color: white;
     cursor: auto;
 }
-footer{
-    background: rgb(22, 22, 22);
-    color: white;
-    margin-bottom: 0px;
-    height: 10vh;
-}
+
 #small-nav{
     display: none;
 }

@@ -14,7 +14,8 @@ export class IserviceService {
     service: '',
     email: '',
     phone: '',
-    location: '',
+    country: '',
+    location:'',
     plan: '',
     category: ''
   }
@@ -49,9 +50,19 @@ export class IserviceService {
 
   //signup user
   signUp(info){
-    return this.http.post(this.url + "signup/",info)
+    return this.http.post(this.url + "signup/",info);
   }
 
+  //create details
+  createDetails(company, details){
+    console.log(details);
+    return this.http.post(this.url + 'user/' + company,{details:details});
+  }
+
+  // find detail
+  findDetail(company){
+    return this.http.get(this.url + 'user/' + company + '/detail');
+  }
 
   //check if user is logged in
   loggedIn(){
@@ -59,7 +70,7 @@ export class IserviceService {
     var token = localStorage.getItem('token');
     if(token){
       return true;
-    } 
+    }
     return false;
   }
 }

@@ -52,7 +52,7 @@
 
                    <div class="form-group">
                    <label for="fullName" class="col-form-label" >Owners Full Name</label>
-                     <input type="text" ngModel class="form-control" #fullName="ngModel" id="fullName" placeholder="John Doe" name="fullName">
+                     <input type="text" ngModel class="form-control" #fullName="ngModel" id="fullName" placeholder="John Doe" name="fullName" required>
                    </div>                  
                    <div class="form-group">
                    <div class="row">
@@ -66,7 +66,10 @@
                     </div>
                    </div>
                    </div>
-               
+                   <div class="form-group">
+                    <label for="city" class="col-form-label" >City Located</label>
+                      <input type="text" ngModel class="form-control" #location="ngModel" id="city" placeholder="John Doe" name="location">
+                    </div>
                
              </div><!-- close .registration-social-login-container -->
 
@@ -77,8 +80,8 @@
                   <input ngModel #phone="ngModel" name="phone" type="text" class="form-control" id="phone" placeholder="234 ......">
                 </div>
                 <div class="form-group">
-                <label for="location" class="col-form-label" >Location</label>
-                  <input ngModel #location="ngModel" name="location" type="text" class="form-control" id="location" placeholder="lagos Nigeria">
+                <label for="location" class="col-form-label" >Country</label>
+                  <input ngModel #country="ngModel" name="country" type="text" class="form-control" id="location" placeholder="Germany">
                 </div>
                 <div class="form-group">
                   <label>Select category</label>
@@ -97,7 +100,7 @@
              <div class="clearfix"></div>
                <div class="form-group last-form-group-continue">
                  <!-- <button type="submit" class="btn btn-default">button</button> -->
-                 <a (click)="submit(fullName,company,service,phone,location,category)" type="submit" class="btn btn-blue-pro">Continue</a>
+                 <a (click)="submit(fullName,company,service,phone,country,location,category)" type="submit" class="btn btn-blue-pro">Continue</a>
                <span class="checkbox-remember-pro"><input type="checkbox" id="checkbox-terms"><label for="checkbox-terms" class="col-form-label">By clicking "Continue", you agree to our <a href="#!">Terms of Use</a> and 
 <a href="#!">Privacy Policy</a> including the use of cookies.</label></span>
                <div class="clearfix"></div>

@@ -6,10 +6,10 @@ var userSchema = new mongoose.Schema({
   service: String,
   email: String,
   phone: String,
-  location: String,
-  isPremium: String,
-  category: String,
-  description: String
+  country: String,
+  location:String,
+  plan: String,
+  category: String
 });
 
 var User = mongoose.model("users", userSchema);

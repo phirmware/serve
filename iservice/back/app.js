@@ -11,6 +11,7 @@ const passport = require('passport');
 const localStrategy = require('passport-local');
 const passportLocalMongoose = require('passport-local-mongoose');
 const jwt = require('jsonwebtoken');
+const Detail = require('./models/details');
 
 app.use(require('express-session')({
   secret:'Im phirmware',
@@ -28,8 +29,8 @@ passport.deserializeUser(loggedUser.deserializeUser());
 
 
 //Connect to database
-//mongoose.connect("mongodb://localhost/iservice");
-mongoose.connect("mongodb://phirmware:itachi1@ds237120.mlab.com:37120/iservice");
+mongoose.connect("mongodb://localhost/iservice");
+//mongoose.connect("mongodb://phirmware:itachi1@ds237120.mlab.com:37120/iservice");
 mongoose.Promise = Promise;
 
 app.use(bodyParser.json());
@@ -39,6 +40,8 @@ app.use(cors());
 
 //Routes
 
+
+// Get all users
 app.get("/", (req, res) => {
   User.find({}, (err, users) => {
     if (err) {
@@ -49,6 +52,7 @@ app.get("/", (req, res) => {
   });
 });
 
+// Create a new user
 app.post("/", function(req, res) {
   User.create(req.body)
     .then(user => {
@@ -59,14 +63,16 @@ app.post("/", function(req, res) {
     });
 });
 
+// Find a user
 app.post('/showuser',(req,res)=>{
   User.find({email:req.body.username}).then((user)=>{
     res.json(user);
   }).catch((err)=>{
     res.json('Error Ocurred!!');
   })
-})
+});
 
+// Find users under a specific category
 app.get('/category/:id',(req,res)=>{
   User.find({category:req.params.id}).then((users)=>{
     res.json(users);
@@ -75,19 +81,24 @@ app.get('/category/:id',(req,res)=>{
   })
 });
 
+// Get token
 app.post('/jwt',(req,res)=>{
   jwt.sign(req.body,'secret key',(err,token)=>{
     res.send({token:token});
  });
 });
+
+// Successful login
 app.get('/success',(req,res)=>{
   res.json({message:'success'});
-})
+});
 
+// Failed login
 app.get('/jwtfailure',(req,res)=>{
   res.json({message:'Failed to login'});
-})
+});
 
+// Signup a new user and get token
 app.post('/signup',(req,res)=>{
   loggedUser.register(new loggedUser({username:req.body.username}),req.body.password,(err,user)=>{
     if(err){
@@ -102,11 +113,13 @@ app.post('/signup',(req,res)=>{
   })
 });
 
+// Login
 app.post('/login',passport.authenticate('local',{
   successRedirect:'/success',
   failureRedirect:'/jwtfailure'
 }),(req,res)=>{});
 
+// Find specific user
 app.get('/user/:id',(req,res)=>{
   User.find({company:req.params.id}).then((user)=>{
     res.json(user);
@@ -115,9 +128,29 @@ app.get('/user/:id',(req,res)=>{
   });
 });
 
-app.listen(process.env.PORT,process.env.IP,()=>{
-  console.log('started!!!');
+
+// Create user details
+app.post('/user/:id',(req,res)=>{
+  Detail.create({company:req.params.id,details:req.body.details}).then((detail)=>{
+    res.json(detail)
+  }).catch((err)=>{
+    console.log(err);
+  })
+});
+
+// Find user detail
+app.get('/user/:id/detail',(req,res)=>{
+  Detail.find({company:req.params.id}).then((detail)=>{
+    res.json(detail);
+  }).catch((err)=>{
+    console.log(err);
+  })
 })
-// app.listen(3000, () => {
-//   console.log("Listening at port 3000");
+
+// app.listen(process.env.PORT,process.env.IP,()=>{
+//   console.log('started!!!');
 // });
+
+app.listen(3000, () => {
+  console.log("Listening at port 3000");
+});

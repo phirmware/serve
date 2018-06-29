@@ -33,7 +33,14 @@
       Medicine
     </a>
   </div>
-  
+  <!-- <div class="ui action input">
+    <input type="text" placeholder="Search...">
+    <select class="ui compact selection dropdown">
+      <option value="location">City</option>
+      <option selected="" value="country">Country</option>
+    </select>
+    <div class="ui button">Search</div>
+  </div> -->
   <div class="pusher">
     <div class="ui basic segment">
       <div class="ui icon buttons">
@@ -57,12 +64,11 @@
                 <p style="text-align: center">{{data.user}}</p>
             </div>
             <div class="card-details">
-               
-                <p style="text-align: center;font-weight: bold">{{data.category}}</p>
                 <p style="text-align: center;font-weight: lighter;"><i class="phone icon"></i>{{data.phone}}</p>
                 <p style="text-align: center"><i class="mail icon"></i>{{data.email}}</p>
                 <p style="text-align: center;"><i class="map marker alternate icon"></i>{{data.location}}</p>
-            </div>
+                <p style="text-align: center;font-weight: lighter"><i class="service icon"></i>{{data.service}}</p>
+              </div>
             
           </div>
         </a>
