@@ -8,9 +8,12 @@
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aclonica" />
   <link rel="icon" type="image/x-icon" href="./assets/manifest-icons/n.png">
   <link rel="manifest" href="manifest.json">
+  <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+  <script src="https://cdn.ckeditor.com/4.5.11/full/ckeditor.js"></script>
 </head>
 <body>
   <app-root></app-root>
+ 
   <script>
     navigator.serviceWorker.register('sw.js').then(()=>{
       console.log('Success');

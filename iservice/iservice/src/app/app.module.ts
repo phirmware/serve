@@ -5,6 +5,9 @@ import { RouterModule, Routes } from "@angular/router";
 import { HttpModule } from "@angular/http";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { CKEditorModule } from 'ng2-ckeditor';
+import { EditorModule } from '@tinymce/tinymce-angular';
+
 
 import { AppComponent } from "./app.component";
 import { SignupComponent } from "./signup/signup.component";
@@ -64,7 +67,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     HttpModule,
+    CKEditorModule,
     FormsModule,
+    EditorModule,
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],

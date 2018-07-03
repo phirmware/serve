@@ -15,7 +15,11 @@ export class SignupStep3Component implements OnInit {
   }
 
   openPage(){
+    if(this.service.poo.company !== ''){
     this.router.navigate(['/user',this.service.poo.company])
+    } else{
+      this.router.navigate(['/step1']);
+    }
   }
 
 }

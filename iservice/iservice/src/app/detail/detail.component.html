@@ -1,4 +1,4 @@
-<form class="setdetails">
-  <textarea ngModel #details="ngModel" name="details" id="details" cols="70" rows="20"></textarea>
+  <!-- <textarea ngModel #details="ngModel" name="editor1" id="editor" cols="70" rows="20"></textarea>
+  <button (click)="createDetails(details)">Post</button> -->
+  <editor ngModel #details="ngModel" initialValue="{{userDetail}}" name="details"></editor>
   <button (click)="createDetails(details)">Post</button>
-</form>

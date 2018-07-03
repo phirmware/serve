@@ -6,12 +6,14 @@
       </div>
       <div class="service">
         {{user.service}}
+        <br>
+        <a [routerLink]="['/userdetail',user.company]">Edit Page</a>
       </div>
-      <a [routerLink]="['/userdetail',user.company]">Edit Page</a>
+      <div [innerHtml]="user.details">
+        
+      </div>
     </div>
-<div class="detail" *ngFor="let detail of detail">
-  {{detail.details}}
-</div>
+
     
 
 

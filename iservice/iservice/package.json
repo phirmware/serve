@@ -21,8 +21,11 @@
     "@angular/platform-browser-dynamic": "^6.0.2",
     "@angular/router": "^6.0.2",
     "@auth0/angular-jwt": "^2.0.0",
+    "@ckeditor/ckeditor5-build-classic": "^10.1.0",
+    "@tinymce/tinymce-angular": "^2.0.0",
     "angular2-jwt": "^0.2.3",
     "core-js": "^2.5.4",
+    "ng2-ckeditor": "^1.2.1",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },

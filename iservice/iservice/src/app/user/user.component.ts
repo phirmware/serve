@@ -2,6 +2,7 @@ import { IserviceService } from './../iservice.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -25,7 +26,6 @@ export class UserComponent implements OnInit {
 
      this.service.findDetail(this.id).subscribe(response=>{
        this.detail = response.json();
-       console.log(this.detail);
      })
   } 
 }

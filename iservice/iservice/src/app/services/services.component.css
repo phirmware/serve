@@ -33,7 +33,6 @@
 .card:hover{
     background:radial-gradient(#1B1C1D,black);
     box-shadow: 2px 2px 35px rgba(0,0,0,0.5);
-    transform: scale(1);
     transition: .2s;
 }
 .ui.vertical.menu .item > i.icon {
@@ -76,7 +75,9 @@
 .centered{
     margin-left: 0px;
 }
-
+.emptycontainer{
+    height:100vh;
+}
 
 @keyframes load{
     20%{

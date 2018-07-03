@@ -131,8 +131,8 @@ app.get('/user/:id',(req,res)=>{
 
 // Create user details
 app.post('/user/:id',(req,res)=>{
-  Detail.create({company:req.params.id,details:req.body.details}).then((detail)=>{
-    res.json(detail)
+  User.findOneAndUpdate({company:req.params.id},{details:req.body.details},{new:true}).then((detail)=>{
+    res.json(detail); 
   }).catch((err)=>{
     console.log(err);
   })
@@ -140,12 +140,12 @@ app.post('/user/:id',(req,res)=>{
 
 // Find user detail
 app.get('/user/:id/detail',(req,res)=>{
-  Detail.find({company:req.params.id}).then((detail)=>{
+  User.find({company:req.params.id}).then((detail)=>{
     res.json(detail);
   }).catch((err)=>{
     console.log(err);
   })
-})
+});
 
 // app.listen(process.env.PORT,process.env.IP,()=>{
 //   console.log('started!!!');
