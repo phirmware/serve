@@ -1,8 +1,8 @@
 {
   "name": "I service",
   "short_name": "iservice",
-  "theme_color": "#1976d2",
-  "background_color": "#1976d2",
+  "theme_color": "green",
+  "background_color": "green",
   "display": "standalone",
   "start_url": "index.html",
   "icons": [
