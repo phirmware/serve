@@ -29,7 +29,9 @@ passport.deserializeUser(loggedUser.deserializeUser());
 
 
 //Connect to database
-mongoose.connect("mongodb://localhost/iservice");
+var mongoUrl = "mongodb://localhost/iservice";
+//var mongoUrl =  "mongodb://phirmware:itachi1@ds237120.mlab.com:37120/iservice";
+mongoose.connect(mongoUrl);
 //mongoose.connect("mongodb://phirmware:itachi1@ds237120.mlab.com:37120/iservice");
 mongoose.Promise = Promise;
 
@@ -147,10 +149,12 @@ app.get('/user/:id/detail',(req,res)=>{
   })
 });
 
+var port = process.env.PORT || 3000;
+
 // app.listen(process.env.PORT,process.env.IP,()=>{
 //   console.log('started!!!');
 // });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Listening at port 3000");
 });

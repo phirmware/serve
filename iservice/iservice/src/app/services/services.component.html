@@ -1,38 +1,51 @@
-<div class="ui bottom attached segment pushable">
-  <div class="ui inverted left vertical sidebar menu" id="sidebar">
-    <a class="item">
-      <i class="home icon"></i>
-      Categories
-    </a>
-    <a class="item" (click)="findUsers('IT Development')">
-      <i class="laptop icon"></i>
+<div class="hero is-light-grey is-fullheight">
+  <p class="buttons">
+    <a class="button" (click)="findUsers('IT Development')">
+      <span class="icon">
+        <i class="fab fa laptop"></i>
+      </span>
       IT Development
     </a>
-    <a class="item" (click)="findUsers('Business')">
-      <i class="balance scale icon"></i>
+    <a class="button" (click)="findUsers('Business')">
+      <span class="icon">
+        <i class="balance scale icon"></i>
+      </span>
       Business
     </a>
-    <a class="item" (click)="findUsers('School')">
-      <i class="book icon"></i>
+    <a class="button" (click)="findUsers('School')">
+      <span class="icon">
+        <i class="book icon"></i>
+      </span>
       School
     </a>
-    <a class="item" (click)="findUsers('Agriculture')">
-      <i class="calendar icon"></i>
+    <a class="button" (click)="findUsers('Agriculture')">
+      <span class="icon">
+        <i class="calendar icon"></i>
+      </span>
       Agriculture
     </a>
-    <a class="item" (click)="findUsers('Food & Dishes')">
-      <i class="food icon"></i>
+    <a class="button" (click)="findUsers('Food & Dishes')">
+      <span class="icon">
+        <i class="food icon"></i>
+      </span>
       Food & Dishes
     </a>
-    <a class="item" (click)="findUsers('Events')">
-      <i class="birthday cake icon"></i>
+    <a class="button" (click)="findUsers('Events')">
+      <span class="icon">
+        <i class="birthday cake icon"></i>
+      </span>
       Events
     </a>
-    <a class="item" (click)="findUsers('Medicine')">
-      <i class="plus icon"></i>
+    <a class="button" (click)="findUsers('Medicine')">
+      <span class="icon">
+        <i class="plus icon"></i>
+      </span>
       Medicine
     </a>
-  </div>
+  </p>
+
+
+
   <!-- <div class="ui action input">
     <input type="text" placeholder="Search...">
     <select class="ui compact selection dropdown">
@@ -43,36 +56,61 @@
   </div> -->
   <div class="pusher">
     <div class="ui basic segment">
-      <div class="ui icon buttons">
-        <button class="ui button showCategories" (click)="toggleNav()">
-          <i class="align justify icon"></i>
-        </button>
-      </div>
-      <svg *ngIf="data == undefined" width="100vw" height="100vh"
-          version="1.1"
-         xmlns="http://www.w3.org/2000/svg"
-         xmlns:xlink="http://www.w3.org/1999/xlink">
-        <circle cx="48vw" cy="170" r="10vw" stroke="blue" stroke-width="4px" fill="white"/>
-        <circle class="inner-circle" cx="48vw" cy="170" r="5vw" stroke="blue" fill="blue"/>
+      <svg *ngIf="data == undefined" width="100vw" height="100vh" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <circle cx="48vw" cy="170" r="10vw" stroke="blue" stroke-width="4px" fill="white" />
+        <circle class="inner-circle" cx="48vw" cy="170" r="5vw" stroke="blue" fill="blue" />
       </svg>
       <h3 *ngIf="data !== undefined" class="ui header" style="text-align: center;letter-spacing: 1px;">{{category}}</h3>
       <div class="emptycontainer" *ngIf="category == 'Empty'"></div>
       <div class="card-container">
-        <a [routerLink]="['/user',data.company]" *ngFor="let data of data">
-          <div class="card">
-            <div class="card-logo">
-                <p class="card-header" style="text-align: center;">{{data.company}}</p>
-                <p style="text-align: center">{{data.user}}</p>
-            </div>
-            <div class="card-details">
-                <p style="text-align: center;font-weight: lighter;"><i class="phone icon"></i>{{data.phone}}</p>
-                <p style="text-align: center"><i class="mail icon"></i>{{data.email}}</p>
-                <p style="text-align: center;"><i class="map marker alternate icon"></i>{{data.location}}</p>
-                <p style="text-align: center;font-weight: lighter"><i class="service icon"></i>{{data.service}}</p>
-              </div>
+        <!-- <a [routerLink]="['/user',data.company]" *ngFor="let data of data">
+        <div class="card">
+          <div class="card-logo">
+            <p class="card-header" style="text-align: center;">{{data.company}}</p>
+            <p style="text-align: center">{{data.user}}</p>
           </div>
-        </a>
+          <div class="card-details">
+            <p style="text-align: center;font-weight: lighter;">
+              <i class="phone icon"></i>{{data.phone}}</p>
+            <p style="text-align: center">
+              <i class="mail icon"></i>{{data.email}}</p>
+            <p style="text-align: center;">
+              <i class="map marker alternate icon"></i>{{data.location}}</p>
+            <p style="text-align: center;font-weight: lighter">
+              <i class="service icon"></i>{{data.service}}</p>
+          </div>
+        </div>
+      </a> -->
+
+        <div class="content-wrapper">
+          <div class="columns">
+            <div class="column is-10">
+              <div class="columns is-vcentered">
+                <div class="column is-6">
+                  <div class="flex-card testimonial-card light-raised padding-20" [routerLink]="['/user',data.company]" *ngFor="let data of data">
+                    <div class="testimonial-title">
+                      {{data.service}}
+                    </div>
+                    <div class="testimonial-text">
+                      <i class="fab fa-mail icon"></i>{{data.email}}
+                      <br> Lorem ipsum dolor sit amet, vim quidam blandit voluptaria no, has eu lorem convenire incorrupte. Vis
+                      mutat altera percipit ad.
+                    </div>
+                    <div class="user-id">
+                      <img class="" src="assets/images/avatars/dan.png" alt="">
+                      <div class="info">
+                        <div class="name clean-text">{{data.company}}</div>
+                        <div class="position">{{data.user}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </div>
   </div>
-</div>

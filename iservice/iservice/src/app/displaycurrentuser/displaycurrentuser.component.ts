@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 export class DisplaycurrentuserComponent implements OnInit {
   currentUser;
   userInfo;
-  url = 'http://localhost:3000/'
-  //url = 'https://evening-peak-69588.herokuapp.com/'
+  //url = 'http://localhost:3000/'
+  url = 'https://evening-peak-69588.herokuapp.com/'
   constructor(private http:Http,private router:Router) { }
   
   ngOnInit() {

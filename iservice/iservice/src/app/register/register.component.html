@@ -1,32 +1,53 @@
-<div class="body">
-  <form #userInfo="ngForm" (ngSubmit)="postData(userInfo.value)">
-    <br>
-    <p *ngIf="user.touched && !user.value" style="color:red;font-weight: bold">Fill in your name</p>
-    <input type="text" #user="ngModel" ngModel required name="user" placeholder="Full-Name">
-    <p *ngIf="company.touched && !company.value" style="color:red;font-weight: bold">Fill in your company name</p>
-    <input type="text" #company="ngModel" ngModel name="company" placeholder="Company Name">
-    <input type="text" ngModel #service="ngModel" name="service" placeholder="Your service">
-    <input id="email" type="email" #email="ngModel" ngModel name="email" value="user.username">
-    <input type="text" ngModel #phone="ngModel" name="phone" placeholder="Phone Number">
-    <input type="text" ngModel #location="ngModel" name="location" placeholder="Location">
-    <label>Choose subscription type.... Premium</label>
-    <select ngModel #isPremium="ngModel" name="isPremium" required>
-      <option>True</option>
-      <option>False</option>
-    </select>
-    <label>Select category</label>
-    <p *ngIf="category.touched && !category.value" style="color:red;font-weight: bold">select a category</p>
-    <select ngModel #category="ngModel" name="category" required>
-      <option>Agriculture</option>
-      <option>School</option>
-      <option>IT Development</option>
-      <option>Business</option>
-      <option>Food & Dishes</option>
-      <option>Events</option>
-      <option>Medicine</option>
-    </select>
-    <br>
-    <input type="text-area" ngModel #description="ngModel" name="description" required placeholder="Short note about your service">
-    <button *ngIf="user.value && isPremium.value && category.value">Register</button>
-  </form>
+<div class="hero is-light-grey is-fullheight">
+  <div class="container has-text-centered">
+    <div class="columns is-vcentered">
+      <div class="column is-6 is-offset-3">
+
+        <div id="login-card" class="animated preFadeInLeft fadeInLeft">
+          <div class="flex-card clean-login-card">
+            <form #userInfo="ngForm" (ngSubmit)="postData(userInfo.value)">
+              <br>
+              <p *ngIf="user.touched && !user.value" style="color:red;font-weight: bold">Fill in your name</p>
+              <div class="control-material is-primary"> 
+              <input class="material-input" type="text" #user="ngModel" ngModel required name="user" placeholder="Full-Name">
+              </div>
+              <p *ngIf="company.touched && !company.value" style="color:red;font-weight: bold">Fill in your company name</p>
+              <div class="control-material is-primary"> 
+              <input class="material-input" type="text" #company="ngModel" ngModel name="company" placeholder="Company Name">
+              </div>
+              <div class="control-material is-primary"> 
+              <input class="material-input" type="text" ngModel #service="ngModel" name="service" placeholder="Your service">
+              </div>
+              <div class="control-material is-primary"> 
+              <input class="material-input" id="email" type="email" #email="ngModel" ngModel name="email" value="user.username">
+              </div>
+              <div class="control-material is-primary"> 
+              <input class="material-input" type="text" ngModel #phone="ngModel" name="phone" placeholder="Phone Number">
+              </div>
+              <div class="control-material is-primary"> 
+              <input class="material-input" type="text" ngModel #location="ngModel" name="location" placeholder="Location">
+              </div>
+              <label>Choose subscription type.... Premium</label>
+              <select ngModel #isPremium="ngModel" name="isPremium" required>
+                <option>True</option>
+                <option>False</option>
+              </select>
+              <label>Select category</label>
+              <p *ngIf="category.touched && !category.value" style="color:red;font-weight: bold">select a category</p>
+              <select ngModel #category="ngModel" name="category" required>
+                <option>Agriculture</option>
+                <option>School</option>
+                <option>IT Development</option>
+                <option>Business</option>
+                <option>Food & Dishes</option>
+                <option>Events</option>
+                <option>Medicine</option>
+              </select>
+              <button>Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

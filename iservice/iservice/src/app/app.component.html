@@ -1,42 +1,73 @@
-<!-- Small screen navigation-->
-<div class="ui secondary pointing menu" id="small-nav">
-  <a class="item" routerLink="/home" routerLinkActive="active">
-    Home
-  </a>
-  <a class="item" routerLink="/services" routerLinkActive="active">
-    Services
-  </a>
-  <a class="item" *ngIf="loggedIn()" routerLink="/step1" routerLinkActive="active">
-    Register
-  </a>
-  <div class="right menu">
-      <a class="item" *ngIf="loggedIn()" routerLink="/loggedinuser" routerLinkActive="active">
-        <i class="user icon"></i>
-      </a>
-    <a class="ui item" *ngIf="!loggedIn()" routerLink="/login" routerLinkActive="active">
-      Login
-    </a>
-    <a class="ui item" *ngIf="!loggedIn()" routerLink="/signup" routerLinkActive="active">
-      Signup
-    </a>
-  </div>
+       
+<!-- Hero and nav -->
+<div class="hero is-theme-primary is-slant">
+    
+    <nav class="navbar navbar-wrapper navbar-fade navbar-light is-transparent">
+        <div class="container">
+            <!-- Brand -->
+            <div class="navbar-brand">
+                <a class="navbar-item" routerLink="/home">
+                    <img class="light-logo" src="assets/images/logos/bulkit-white.svg" alt="">
+                    <img class="dark-logo" src="assets/images/logos/bulkit-green.svg" alt="">
+                </a>
+    
+        
+    
+                <!-- Responsive toggle -->
+                <div class="custom-burger" data-target="">
+                    <a id="" class="responsive-btn" href="javascript:void(0);">
+                        <span class="menu-toggle">	
+                            <span class="icon-box-toggle"> 	
+                                <span class="rotate">
+                                    <i class="icon-line-top"></i>
+                                    <i class="icon-line-center"></i>
+                                    <i class="icon-line-bottom"></i> 
+                                </span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+                <!-- /Responsive toggle -->
+            </div>
+    
+            <!-- Navbar menu -->
+            <div class="navbar-menu">
+                <!-- Navbar Start -->
+                <div class="navbar-start">
+                    <!-- Navbar item -->
+                    <a class="navbar-item is-slide" routerLink="/features">
+                        Features
+                    </a>
+                    <!-- Navbar item -->
+                    <a class="navbar-item is-slide" routerLink="/pricing">
+                        Pricing
+                    </a>
+                    <a class="navbar-item is-slide" routerLink="/services">
+                        Services
+                        </a>
+                    <!-- Navbar item -->
+                    <a *ngIf="!loggedIn()" class="navbar-item is-slide" routerLink="/login">
+                        Login
+                    </a>
+                    <a *ngIf="loggedIn()" class="navbar-item is-slide" (click)="logOut()">
+                        Logout
+                    </a>
+                </div>
+    
+                <!-- Navbar end -->
+                <div class="navbar-end">
+                    <!-- Signup button -->
+                    <div class="navbar-item">
+                        <a *ngIf="!loggedIn()" id="#signup-btn" routerLink="/signup" class="button button-signup btn-outlined is-bold btn-align light-btn raised">
+                            Free Trial
+                        </a>
+                        <a *ngIf="loggedIn()" id="#signup-btn" routerLink="/register" class="button button-signup btn-outlined is-bold btn-align light-btn raised">
+                            Register Company
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 </div>
-
-
-<!--Big screen navigation-->
-<nav id="big-nav">
-  <ul class="hide">
-    <li class="logo" routerLink="/home">I service</li>
-  </ul>
-  <ul>
-    <li routerLink="/home" routerLinkActive="active">Home</li>
-    <li routerLink="/services" routerLinkActive="active">Services</li>
-    <li *ngIf="loggedIn()" routerLink="/step1" routerLinkActive="active">Register Company</li>
-    <li *ngIf="loggedIn()" routerLink="/loggedinuser" routerLinkActive="active"><i class="user icon"></i></li>
-    <li class="logout" *ngIf="loggedIn()" routerLinkActive="active" (click)="logOut()">LogOut</li>
-    <li *ngIf="!loggedIn()" routerLink="/login" routerLinkActive="active">Login</li>
-    <li *ngIf="!loggedIn()" routerLink="/signup" routerLinkActive="active">Signup</li>
-  </ul>
-</nav>
-
 <router-outlet></router-outlet>

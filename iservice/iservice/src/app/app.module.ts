@@ -20,25 +20,22 @@ import { UploadImageComponent } from "./upload-image/upload-image.component";
 import { RegisterComponent } from "./register/register.component";
 import { JwtModule } from "@auth0/angular-jwt";
 import { DisplaycurrentuserComponent } from "./displaycurrentuser/displaycurrentuser.component";
-import { SignupStepComponent } from './signup-step/signup-step.component';
-import { SignupStep1Component } from './signup-step1/signup-step1.component';
-import { SignupStep2Component } from './signup-step2/signup-step2.component';
-import { SignupStep3Component } from './signup-step3/signup-step3.component';
+
 import { DetailComponent } from './detail/detail.component';
+import { FeaturesComponent } from './features/features.component';
+import { PricingComponent } from './pricing/pricing.component';
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "signup", component: SignupComponent },
+  { path: "features", component:FeaturesComponent},
   { path: "login", component: LoginComponent },
   { path: "services", component: ServicesComponent },
+  { path: "pricing", component:PricingComponent},
   { path: "userdetail/:id",component: DetailComponent},
   { path: "user/:id", component: UserComponent },
   { path: "upload", component: UploadImageComponent },
   { path: "loggedinuser", component: DisplaycurrentuserComponent },
-  { path: "step1",component:SignupStepComponent},
-  { path: "step2",component:SignupStep1Component},
-  { path: "step3",component:SignupStep2Component},
-  { path: "welcome",component:SignupStep3Component},
   {
     path: "register",
     component: RegisterComponent,
@@ -58,11 +55,9 @@ const routes: Routes = [
     UploadImageComponent,
     RegisterComponent,
     DisplaycurrentuserComponent,
-    SignupStepComponent,
-    SignupStep1Component,
-    SignupStep2Component,
-    SignupStep3Component,
-    DetailComponent
+    DetailComponent,
+    FeaturesComponent,
+    PricingComponent
   ],
   imports: [
     BrowserModule,

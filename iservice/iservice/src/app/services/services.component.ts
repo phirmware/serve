@@ -17,13 +17,9 @@ export class ServicesComponent implements OnInit {
       })
   }
   
-  toggleNav(){
-    document.getElementById('sidebar').classList.toggle('visible');
-  }
 
   findUsers(category){
     this.data = undefined;
-    document.getElementById('sidebar').classList.toggle('visible');
     this.service.findData(category).subscribe(response=>{
        this.data = response.json();
        if(response.json()[0] == undefined){

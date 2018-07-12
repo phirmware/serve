@@ -6,7 +6,7 @@ import { Http } from "@angular/http";
   providedIn: "root"
 })
 export class IserviceService {
-  //url = "https://evening-peak-69588.herokuapp.com/";
+ // url = "https://evening-peak-69588.herokuapp.com/" || "http://localhost:3000/";
   url = "http://localhost:3000/";
   poo = {
     user: '',
